@@ -87,27 +87,44 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  background: #333;
-  color: #fff;
-  padding: 10px 0;
-  align-items: center; /* This will vertically center the contents */
-  justify-content: center; /* This will horizontally center the contents if there is extra space */
-}
-
-.header-title-description {
-  flex: 1; /* Takes up the remaining space after the logo and any other flex items */
-  text-align: left; /* Aligns the text to the left within the title and description area */
-}
-
-.header-logo {
-  width: 100px; /* Sets the width of the logo container to 100px */
-  height: 100px; /* Sets the height of the logo container to 100px */
-  display: flex; /* Ensures that any content inside the logo container is also flex */
-  justify-content: center; /* Centers the logo horizontally within the container */
-  align-items: center; /* Centers the logo vertically within the container */
-}
+    display: flex;
+    flex-direction: row;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-between; /* Adjusted to space-between to push title and logo to the edges */
+  }
+  
+  .header-title-description {
+    margin-left: 20px;
+    /* Removed flex: 1 so it doesn't take up the remaining space, allowing the logo to move to the right */
+    text-align: left;
+  }
+  
+  .header-logo {
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    /* Removed flex display properties since it's not necessary unless the logo has children elements that need to be flex-aligned */
+  }
+  
+  /* Media query for wider viewports */
+  @media (min-width: 768px) { /* Adjust this to your breakpoint for 'wider viewports' */
+    .header-title-description {
+      flex-grow: 0; /* Ensure it doesn't grow to push the logo away */
+      flex-basis: auto; /* Adjust the starting size based on content */
+    }
+    
+    .header-logo {
+      order: 2; /* Pushes the logo to the end of the flex container */
+    }
+    
+    .header-title-description {
+      order: 1; /* Ensures title and description come before the logo */
+    }
+  }
+  
 
 h1 {
   margin: 0; /* Ensures that the h1 element has no margin */
@@ -198,6 +215,7 @@ h1 {
 }
 
 .inquire-button {
+  font-family: Cinzel, serif;
   background: var(--primary-500);
   color: #fff;
   border: none;
