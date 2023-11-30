@@ -4,7 +4,7 @@
   --light-color: #f4f4f4;
   --dark-color: #333;
   --danger-color: #dc3545;
-} 
+}
 
 body {
   font-family: "Arial", sans-serif;
@@ -67,7 +67,7 @@ h1 {
   padding: 10px 20px;
   cursor: pointer;
   display: block;
-  width: 100%;
+  width: 75%;
   box-sizing: border-box;
 }
 
