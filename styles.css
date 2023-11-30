@@ -1,9 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 :root {
   --primary-color: #007bff;
   --secondary-color: #6c757d;
   --light-color: #f4f4f4;
   --dark-color: #333;
   --danger-color: #dc3545;
+
+  /* logo colors */
+  /* Additional Colors */
+  --custom-green: #9eba89; /* A muted green, perhaps for calm, nature-related UI elements */
+  --custom-red: #f9542a; /* A bright, vivid red, for attention-grabbing elements or warnings */
+  --custom-sand: #f8cb7a; /* A sandy yellow, for highlights or subdued alerts */
+  --custom-navy: #1c3f61; /* A deep navy blue, for professional or serious content */
+  --custom-burnt-orange: #d85b3f; /* A burnt orange, for calls to action or autumnal themes */
+  --custom-brown: #9b4f2e; /* A rich brown, for earthy, solid backgrounds or text */
+  --custom-gold: #87631a; /* A golden color, for premium-feel or decorative accents */
+  --custom-slate: #4d6558; /* A slate grey, for neutral, unobtrusive UI elements */
+
+  /* Primary Palette */
+  --primary-050: #fffbea;
+  --primary-100: #fff3c4;
+  --primary-200: #fce588;
+  --primary-300: #fadb5f;
+  --primary-400: #f7c948;
+  --primary-500: #f0b429; /* Main Primary Color */
+  --primary-600: #de911d;
+  --primary-700: #cb6e17;
+  --primary-800: #b44d12;
+  --primary-900: #8d2b0b;
+
+  /* Light Blue Palette */
+  --light-blue-050: #e3f8ff;
+  --light-blue-100: #b3ecff;
+  --light-blue-200: #81defd;
+  --light-blue-300: #5ed0fa;
+  --light-blue-400: #40c3f7;
+  --light-blue-500: #2bb0ed; /* Secondary Color */
+  --light-blue-600: #1992d4;
+  --light-blue-700: #127fbf;
+  --light-blue-800: #0b69a3;
+  --light-blue-900: #035388;
+
+  /* Neutrals Palette */
+  --neutral-050: #f7f7f7; /* Light Color */
+  --neutral-100: #e1e1e1;
+  --neutral-200: #cfcfcf;
+  --neutral-300: #b1b1b1;
+  --neutral-400: #9e9e9e;
+  --neutral-500: #7e7e7e;
+  --neutral-600: #626262;
+  --neutral-700: #515151;
+  --neutral-800: #3b3b3b; /* Dark Color */
+  --neutral-900: #222222;
+
+  /* Supporting Palette (Red) */
+  --supporting-red-050: #ffe3e3;
+  --supporting-red-100: #ffbdbd;
+  --supporting-red-200: #ff9b9b;
+  --supporting-red-300: #f86a6a;
+  --supporting-red-400: #ef4e4e;
+  --supporting-red-500: #e12d39; /* Danger Color */
+  --supporting-red-600: #cf1124;
+  --supporting-red-700: #ab091e;
+  --supporting-red-800: #8a041a;
+  --supporting-red-900: #610316;
+
+  /* Teal Palette */
+  --teal-050: #effcf6;
+  --teal-100: #c6f7e2;
+  --teal-200: #8eedc7;
+  --teal-300: #65d6ad;
+  --teal-400: #3ebd93;
+  --teal-500: #27ab83; /* Accent Color */
+  --teal-600: #199473;
+  --teal-700: #147d64;
+  --teal-800: #0c6b58;
+  --teal-900: #014d40;
 }
 
 body {
@@ -14,14 +87,76 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: row;
   background: #333;
   color: #fff;
   padding: 10px 0;
-  text-align: center;
+  align-items: center; /* This will vertically center the contents */
+  justify-content: center; /* This will horizontally center the contents if there is extra space */
+}
+
+.header-title-description {
+  flex: 1; /* Takes up the remaining space after the logo and any other flex items */
+  text-align: left; /* Aligns the text to the left within the title and description area */
+}
+
+.header-logo {
+  width: 100px; /* Sets the width of the logo container to 100px */
+  height: 100px; /* Sets the height of the logo container to 100px */
+  display: flex; /* Ensures that any content inside the logo container is also flex */
+  justify-content: center; /* Centers the logo horizontally within the container */
+  align-items: center; /* Centers the logo vertically within the container */
 }
 
 h1 {
-  margin: 0;
+  margin: 0; /* Ensures that the h1 element has no margin */
+}
+
+.title {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-family: "Cinzel", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Base styles for the navigation */
+.nav ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: flex; /* Display list items in a row */
+  justify-content: space-evenly; /* Evenly distribute items across the width */
+}
+
+.nav li {
+  display: block; /* Make list items block-level for spacing */
+}
+
+.nav a {
+  font-family: Cinzel, serif;
+  font-size: 1.5rem;
+  text-decoration: none; /* Optional: Removes underline from links */
+  padding: 10px 15px; /* Optional: Adds some padding to links for better clickability */
+  display: block; /* Makes the padding effective */
+}
+
+/* Media query for narrower viewports */
+@media (max-width: 600px) {
+  /* Adjust the max-width as needed for your design */
+  .nav ul {
+    flex-direction: column; /* Stack list items vertically */
+  }
+
+  .nav li {
+    width: 100%; /* Full width for each list item */
+    text-align: center; /* Center the text if desired */
+  }
 }
 
 .main {
@@ -47,6 +182,8 @@ h1 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
+  position: relative; /* Add this line */
+  padding-bottom: 50px; /* Add bottom padding to ensure space for the button */
 }
 
 .painting-image {
@@ -61,7 +198,7 @@ h1 {
 }
 
 .inquire-button {
-  background: #007bff;
+  background: var(--primary-500);
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -69,18 +206,24 @@ h1 {
   display: block;
   width: 75%;
   box-sizing: border-box;
+
+  /* New styles for positioning */
+  position: absolute;
+  left: 50%; /* Center the button */
+  bottom: 10px; /* Position at the bottom with some space */
+  transform: translateX(-50%); /* Offset by half the button's width to center */
 }
 
 .inquire-button:hover {
-  background: #0056b3;
+  background: var(--primary-300);
 }
 
 footer {
+  font-family: Cinzel, serif;
   background: #333;
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  position: absolute;
-  bottom: 0;
+  position: relative; /* No longer need absolute positioning */
   width: 100%;
 }

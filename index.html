@@ -5,12 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Madonna's Art Gallery</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/img/mom_logo_no_background.png"
+    />
   </head>
   <body>
     <header>
-      <h1>Madonna's Art Gallery</h1>
+      <div class="header-title-description">
+        <h1 class="title">Madonna's Art Gallery</h1>
+        <h2 class="subtitle">Art for Everyone</h2>
+      </div>
+      <img
+        class="header-logo"
+        src="assets/img/mom_logo_no_background(1).svg"
+        alt="Madonna"
+      />
     </header>
     <main>
+      <!-- Navigation -->
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
       <section class="gallery">
         <!-- Card for a painting -->
         <!-- Card for moms_painting1.png -->
@@ -111,10 +132,9 @@
           </div>
           <button class="inquire-button">Inquire Now</button>
         </div>
-
-        
       </section>
     </main>
+
     <footer>
       <p>&copy; 2023 Madonna's Gallery</p>
     </footer>
